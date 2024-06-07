@@ -1,0 +1,12 @@
+/* src/styles.css */
+
+/* Import Tailwind CSS */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Add your custom styles below */
+/* For example: */
+body {
+  font-family: 'Arial', sans-serif;
+}
