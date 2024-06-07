@@ -7,11 +7,19 @@ const weatherRoutes = require('./routes/weatherRoutes');
 const feedbackRoutes = require('./routes/feedbackRoutes');
 const weatherForecastRoutes = require('./routes/weatherForecastRoutes');
 const auth = require('./middleware/auth');
+const cors = require('cors'); // Import the cors middleware
 
 dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
+
+// Allow requests from specific origins (replace frontend-url.vercel.app with your actual frontend domain)
+app.use(cors({
+  origin: 'https://weather-app-frontend-ruby.vercel.app',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 // Root route
 app.get('/', (req, res) => {
