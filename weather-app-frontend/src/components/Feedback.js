@@ -30,8 +30,18 @@ const Feedback = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <textarea value={message} placeholder="Feedback" onChange={handleChange}></textarea>
-      <button type="submit">Submit Feedback</button>
+      <textarea
+        value={message}
+        placeholder="Feedback"
+        onChange={handleChange}
+        className="border border-gray-300 rounded-md p-2"
+      ></textarea>
+      <button
+        type="submit"
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Submit Feedback
+      </button>
     </form>
   );
 };
