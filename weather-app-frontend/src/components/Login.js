@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [formData, setFormData] = useState({
     username: '',
     password: ''
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,8 +24,10 @@ const Login = () => {
       console.log(response.data);
       // Save the token to localStorage
       localStorage.setItem('token', response.data.token);
+      // Navigate to the profile page
+      navigate('/profile');
     } catch (error) {
-      console.error(error);
+      console.error('Login failed', error);
     }
   };
 
