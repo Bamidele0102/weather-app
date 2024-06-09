@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 // Allow requests from specific origins (replace frontend-url.vercel.app with your actual frontend domain)
 app.use(cors({
-  origin: 'https://weather-app-frontend-i88dyfvnw.vercel.app/',
+  origin: 'https://weather-app-frontend-i88dyfvnw.vercel.app',
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
